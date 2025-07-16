@@ -14,4 +14,4 @@ RUN chmod +x gradlew
 RUN ./gradlew build -x test
 
 # Run the Spring Boot application
-CMD ["./gradlew", "bootRun"] 
+CMD ["java", "-Xmx256m", "-Xms128m", "-jar", "build/libs/BeApplication.jar"] 
