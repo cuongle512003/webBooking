@@ -13,5 +13,8 @@ RUN chmod +x gradlew
 # Build the application
 RUN ./gradlew build -x test
 
+# Copy the JAR file to the container
+COPY build/libs/BE-0.0.1-SNAPSHOT.jar app.jar
+
 # Run the Spring Boot application
-CMD ["java", "-Xmx256m", "-Xms128m", "-jar", "build/libs/BeApplication.jar"] 
+CMD ["java", "-Xmx256m", "-Xms128m", "-jar", "app.jar"] 
